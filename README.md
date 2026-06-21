@@ -30,3 +30,5 @@ Run the script and verify the output by using the following
 
 The command output will look like this
 ![Output Script](./outputcode1.png)
+
+### 🔍 Phase 2: Log Filtering and Management (The Filtering Logic)
