@@ -8,4 +8,4 @@ This project is developed and running on **Linux Mint**.
 
 In this step, we create the `security_audit.sh` file and write the initial base structure.
 
-**Command:** nano security_audit
+**Command:** nano security_audit.sh
