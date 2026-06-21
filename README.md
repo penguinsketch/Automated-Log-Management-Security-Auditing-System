@@ -7,3 +7,5 @@ This project is developed and running on **Linux Mint**.
 ### 🚀 Phase 1: Creating the Script and Setting up the Base Code
 
 In this step, we create the `security_audit.sh` file and write the initial base structure.
+
+**Command:** nano security_audit
