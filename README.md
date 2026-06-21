@@ -29,4 +29,4 @@ Run the script and verify the output by using the following
 ./security_audit.sh
 
 The command output will look like this
-
+![Output Script](./outputcode1.png)
