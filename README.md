@@ -23,3 +23,10 @@ To run the script, you need to change its file permissions using the `chmod`
 
 **Note:** Using `chmod +x` grants executable permissions to the file, allowing the system to run it as a program.
 Use code with caution.
+
+Run the script and verify the output by using the following 
+**Commands:**
+./security_audit.sh
+
+The command output will look like this
+
