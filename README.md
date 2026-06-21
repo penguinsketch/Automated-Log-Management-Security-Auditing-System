@@ -13,3 +13,6 @@ In this step, we create the `security_audit.sh` file and write the initial base 
 Add this code into the script file
 ![Creating Script](./code1.png)
 
+* `LOG_FILE="/home/admint/audit_report.txt"`                  : Defines the path where the audit report file will be saved.
+* `echo "---Security Audit Start at $(date) ---" > $LOG_FILE` : Creates the report file and records the exact start date and time.
+* `echo "Status: Monitoring active" >> $LOG_FILE`             : Appends the current system monitoring status to the end of the file.
