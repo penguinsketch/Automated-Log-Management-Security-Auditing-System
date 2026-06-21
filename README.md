@@ -18,7 +18,8 @@ Add this code into the script file
 * `echo "Status: Monitoring active" >> $LOG_FILE`             : Appends the current system monitoring status to the end of the file.
 
 **Making the Script Executable**
-To run the script, you need to change its file permissions using the `chmod` **command:** chmod +x security_audit.sh
+To run the script, you need to change its file permissions using the `chmod`
+**Command:** chmod +x security_audit.sh
 
 **Note:** Using `chmod +x` grants executable permissions to the file, allowing the system to run it as a program.
 Use code with caution.
