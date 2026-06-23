@@ -37,3 +37,12 @@ Clean up expired logs to free up storage without affecting critical system files
 * **`find`**: Best for scanning and bulk-deleting residual files based on conditions (e.g., daily log cleanup).
 * **`sleep && rm`**: Best for delayed deletion of a specific file like a "time bomb" (e.g., removing a temporary file 5 minutes after use).
 Use code with caution.
+
+#### Example: Managing files older than 7 days in `/var/log/myapp`
+![Output Script](./code2.png)
+
+* **`-name "*.log"`**: Restricts the search to files ending with the `.log` extension.
+* **`-type f`**: Limits the search to "files" only (excluding directories) for safety.
+* **`-mtime +7`**: Finds files last modified more than 7 days ago.
+* **`-mmin +5`**: Finds files older than 5 minutes (perfect for quick testing without waiting 7 days).
+Use code with caution.หากคุณต้องการให้ผมช่วยเขียน คำสั่ง find แบบเต็มประโยค ที่รวมเอาออปชันเหล่านี้เข้าด้วยกัน พร้อมคำสั่งลบ -delete หรือ -exec rm เพื่อให้ผู้ใช้งานคัดลอกไปวางใน Terminal ได้ทันที แจ้งได้เลยนะครับ!
