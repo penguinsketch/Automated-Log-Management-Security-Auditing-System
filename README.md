@@ -43,6 +43,10 @@ Add this code into the script file
 
 ![Output Script](./code_2.png)
 
+* `TARGET_DIR="/var/log/myapp"`                                   : Defines the target directory path where the script will search for log files.
+* `echo "Scanning for old logs in $TARGET_DIR..."` >> $LOG_FILE   : Appends a progress message to the report file, showing which directory is being scanned.
+* `find $TARGET_DIR -name "*.log" -type f -mtime +7` >> $LOG_FILE : Searches for .log files older than 7 days in the target directory and appends the list of found files to the report.
+
 * **`-name "*.log"`**: Restricts the search to files ending with the `.log` extension.
 * **`-type f`**: Limits the search to "files" only (excluding directories) for safety.
 * **`-mtime +7`**: Finds files last modified more than 7 days ago.
