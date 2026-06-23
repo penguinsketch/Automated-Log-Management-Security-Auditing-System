@@ -56,7 +56,8 @@ Use code with caution.
 **Note:** Never use the `-delete` option right away. Always verify that your `find` command targets the correct files first. It is highly recommended to output (echo) the file list into a log file for review before executing any actual deletion.
 
 Run the script and verify the output by using the following 
-**Commands:**
+**Commands:** 
 ./security_audit.sh
+
 ![Output Script](./outputcode2.png)
 
