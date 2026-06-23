@@ -61,3 +61,4 @@ Run the script and verify the output by using the following
 
 ![Output Script](./outputcode2.png)
 
+The output does not show any `.log` files because of the `-mtime +7` condition, which looks for files older than 7 days. Since our test files were created just 5 minutes ago, they do not match the criteria and are excluded from the search results.
