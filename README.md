@@ -52,3 +52,5 @@ Add this code into the script file
 * **`-mtime +7`**: Finds files last modified more than 7 days ago.
 * **`-mmin +5`**: Finds files older than 5 minutes (perfect for quick testing without waiting 7 days).
 Use code with caution.
+
+**Note:** Never use the `-delete` option right away. Always verify that your `find` command targets the correct files first. It is highly recommended to output (echo) the file list into a log file for review before executing any actual deletion.
