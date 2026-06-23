@@ -41,7 +41,7 @@ Use code with caution.
 #### Example: Managing files older than 7 days in `/var/log/myapp`
 Add this code into the script file
 
-![Output Script](./code2.png)
+![Output Script](./code_2.png)
 
 * **`-name "*.log"`**: Restricts the search to files ending with the `.log` extension.
 * **`-type f`**: Limits the search to "files" only (excluding directories) for safety.
