@@ -45,4 +45,4 @@ Use code with caution.
 * **`-type f`**: Limits the search to "files" only (excluding directories) for safety.
 * **`-mtime +7`**: Finds files last modified more than 7 days ago.
 * **`-mmin +5`**: Finds files older than 5 minutes (perfect for quick testing without waiting 7 days).
-Use code with caution.หากคุณต้องการให้ผมช่วยเขียน คำสั่ง find แบบเต็มประโยค ที่รวมเอาออปชันเหล่านี้เข้าด้วยกัน พร้อมคำสั่งลบ -delete หรือ -exec rm เพื่อให้ผู้ใช้งานคัดลอกไปวางใน Terminal ได้ทันที แจ้งได้เลยนะครับ!
+Use code with caution.
