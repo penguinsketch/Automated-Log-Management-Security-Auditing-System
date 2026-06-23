@@ -36,4 +36,4 @@ Clean up expired logs to free up storage without affecting critical system files
 
 * **`find`**: Best for scanning and bulk-deleting residual files based on conditions (e.g., daily log cleanup).
 * **`sleep && rm`**: Best for delayed deletion of a specific file like a "time bomb" (e.g., removing a temporary file 5 minutes after use).
-Use code with caution.หากคุณต้องการปรับเปลี่ยน ระยะเวลา ในตัวอย่าง หรือต้องการเพิ่ม โค้ดตัวอย่าง (Code Snippet) ของทั้งสองคำสั่งนี้เข้าไปใน README เพื่อให้คนอ่านเข้าใจง่ายขึ้น สามารถบอกผมได้เลยนะครับ!AI can make mistakes, so double-check responses 
+Use code with caution.
