@@ -76,3 +76,20 @@ Scroll to the bottom of the file and append the following line (make sure to rep
 #### **Method 2: The Pro Approach**
 In Cloud Security operations, setups are often automated across multiple systems. You can use Linux Pipes (`|`) and Redirection to inject the task into Crontab instantly without opening an interactive editor: `(crontab -l 2>/dev/null; echo "0 0 * * * /path/to/security_audit.sh") | crontab -`
 
+Add this into the crontab -e file
+![Output Script](./code3.png)
+
+```text
+ 0   0   *   *   *   /path/to/security_audit.sh
+ │   │   │   │   │   └─ Path to the script execution file
+ │   │   │   │   └─ Day of the week (Every day)
+ │   │   │   └─ Month (Every month)
+ │   │   └─ Day of the month (Every day)
+ │   └─ Hour (0 = Midnight / 12:00 AM)
+ └─ Minute (0 = Minute zero)
+```
+
+* **`0 0 * * *`**: Schedules the task to run automatically **every day at midnight (00:00)**.
+* **`/path/to/security_audit.sh`**: Specifies the absolute path to the script that will be executed.
+
+
