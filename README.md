@@ -65,4 +65,13 @@ The command output will look like this
 The output does not show any `.log` files because of the `-mtime +7` condition, which looks for files older than 7 days. Since our test files were created just 5 minutes ago, they do not match the criteria and are excluded from the search results.
 
 ### ⏰ Phase 3: Automating the System with Crontab
+Instead of manually running the script every day, we can register it as a scheduled task in the system (via Crontab) to automatically execute the log cleanup script every midnight.
+
+**Method 1: The Standard Approach (Manual Editor)**
+Open the Crontab configuration editor by running: `crontab -e`
+
+Scroll to the bottom of the file and append the following line (make sure to replace `/path/to/` with your actual script path): `0 0 * * * /path/to/security_audit.sh`
+
+#### **Method 2: The Pro Approach**
+In Cloud Security operations, setups are often automated across multiple systems. You can use Linux Pipes (`|`) and Redirection to inject the task into Crontab instantly without opening an interactive editor: `(crontab -l 2>/dev/null; echo "0 0 * * * /path/to/security_audit.sh") | crontab -`
 
