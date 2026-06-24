@@ -67,7 +67,7 @@ The output does not show any `.log` files because of the `-mtime +7` condition, 
 ### ⏰ Phase 3: Automating the System with Crontab
 Instead of manually running the script every day, we can register it as a scheduled task in the system (via Crontab) to automatically execute the log cleanup script every midnight.
 
-**Method 1: The Standard Approach (Manual Editor)**
+**Method 1: The Standard Approach (Manual Editor)** 
 Open the Crontab configuration editor by running: `crontab -e`
 
 Scroll to the bottom of the file and append the following line (make sure to replace `/path/to/` with your actual script path): `0 0 * * * /path/to/security_audit.sh`
