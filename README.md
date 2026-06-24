@@ -134,7 +134,7 @@ find $TARGET_DIR -name "*.log" -type f -mtime +7 >> $REPORT_FILE
 find $TARGET_DIR -name "*.log" -type f -mtime +7 -delete
 ```
 
-# 5.Summary of the report's findings.
+### 5.Summary of the report's findings.
 ```
 echo "================================================" >> $REPORT_FILE
 echo "Status: Cleanup Completed Successfully." >> $REPORT_FILE
