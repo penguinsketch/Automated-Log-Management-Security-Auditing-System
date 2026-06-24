@@ -99,3 +99,43 @@ Add this into the crontab -e file
 3. **Verify the Output**: Check your `audit_report.txt` file. You should see new log entries appended automatically without any manual intervention.
 
 ![Output Script](./outputcode3.png)
+
+### 📊 Phase 4: Reporting & Auditing Setup
+To consolidate all results into a single file, we will optimize the script to structure the audit report into 3 clean sections:
+
+* **Header**: Records the exact system start timestamp.
+* **Body**: Displays the list of detected stale log files queued for management.
+* **Footer**: Appends a confirmation timestamp once the operation completes successfully.
+
+Here is the complete production-ready script combining all components from Phases 1–3 into a structured, well-formatted workflow:
+![Output Script](./code4.png)
+
+# 1. Define the variables and file locations for the report.
+```
+REPORT_FILE="/home/admint/Security_report.txt"
+TARGET_DIR="/var/log/myapp"
+```
+
+# 2. Begin saving the report (use > to start a new file each time it is run) 
+```
+echo "================================================" > $REPORT_FILE
+echo "Security Audit Report - Generated on $(date)" >> $REPORT_FILE
+echo "================================================" >> $REPORT_FILE
+```
+
+# 3. Check the files that meet the criteria (SOC Logic: Look at the list before actually deleting) 
+```
+echo "Found the following logs for deletion (Older than 7 days):" >> $REPORT_FILE
+find $TARGET_DIR -name "*.log" -type f -mtime +7 >> $REPORT_FILE
+```
+
+#4. Order to delete the actual file (this step requires you to be sure before entering -delete) 
+```
+find $TARGET_DIR -name "*.log" -type f -mtime +7 -delete
+```
+
+# 5.Summary of the report's findings.
+```
+echo "------------------------------------------------" >> $REPORT_FILE
+echo "Status: Cleanup Completed Successfully." >> $REPORT_FILE
+```
