@@ -4,7 +4,7 @@ This project uses **Bash Script** to automate log management and security auditi
 
 This project is developed and running on **Linux Mint**.
 
-### 🚀 Phase 1: Creating the Script and Setting up the Base Code
+## 🚀 Phase 1: Creating the Script and Setting up the Base Code
 
 In this step, we create the `security_audit.sh` file and write the initial base structure.
 
@@ -31,7 +31,7 @@ Run the script and verify the output by using the following
 The command output will look like this
 ![Output Script](./outputcode1.png)
 
-### 🔍 Phase 2: Log Filtering and Management (The Filtering Logic)
+## 🔍 Phase 2: Log Filtering and Management (The Filtering Logic)
 Clean up expired logs to free up storage without affecting critical system files.
 
 * **`find`**: Best for scanning and bulk-deleting residual files based on conditions (e.g., daily log cleanup).
@@ -64,7 +64,7 @@ The command output will look like this
 
 The output does not show any `.log` files because of the `-mtime +7` condition, which looks for files older than 7 days. Since our test files were created just 5 minutes ago, they do not match the criteria and are excluded from the search results.
 
-### ⏰ Phase 3: Automating the System with Crontab
+## ⏰ Phase 3: Automating the System with Crontab
 Instead of manually running the script every day, we can register it as a scheduled task in the system (via Crontab) to automatically execute the log cleanup script every midnight.
 
 **Method 1: The Standard Approach (Manual Editor)** 
@@ -73,7 +73,7 @@ Open the Crontab configuration editor by running: `crontab -e`
 
 Scroll to the bottom of the file and append the following line (make sure to replace `/path/to/` with your actual script path): `0 0 * * * /path/to/security_audit.sh`
 
-#### **Method 2: The Pro Approach**
+**Method 2: The Pro Approach**
 In Cloud Security operations, setups are often automated across multiple systems. You can use Linux Pipes (`|`) and Redirection to inject the task into Crontab instantly without opening an interactive editor: `(crontab -l 2>/dev/null; echo "0 0 * * * /path/to/security_audit.sh") | crontab -`
 
 Add this into the crontab -e file
@@ -92,7 +92,7 @@ Add this into the crontab -e file
 * **`0 0 * * *`**: Schedules the task to run automatically **every day at midnight (00:00)**.
 * **`/path/to/security_audit.sh`**: Specifies the absolute path to the script that will be executed.
 
-## 🔍 Verification
+### 🔍 Verification
 
 1. **Check the Queue**: After setup, run `crontab -l` to verify that your script has been successfully registered in the system's schedule.
 2. **Await Automation**: Wait for the scheduled execution time (e.g., midnight) to trigger.
@@ -110,26 +110,26 @@ To consolidate all results into a single file, we will optimize the script to st
 Here is the complete production-ready script combining all components from Phases 1–3 into a structured, well-formatted workflow:
 ![Output Script](./code4.png)
 
-# 1. Define the variables and file locations for the report.
+### 1. Define the variables and file locations for the report.
 ```
 REPORT_FILE="/home/admint/Security_report.txt"
 TARGET_DIR="/var/log/myapp"
 ```
 
-# 2. Begin saving the report (use > to start a new file each time it is run) 
+### 2. Begin saving the report (use > to start a new file each time it is run) 
 ```
 echo "================================================" > $REPORT_FILE
 echo "Security Audit Report - Generated on $(date)" >> $REPORT_FILE
 echo "================================================" >> $REPORT_FILE
 ```
 
-# 3. Check the files that meet the criteria (SOC Logic: Look at the list before actually deleting) 
+### 3. Check the files that meet the criteria (SOC Logic: Look at the list before actually deleting) 
 ```
 echo "Found the following logs for deletion (Older than 7 days):" >> $REPORT_FILE
 find $TARGET_DIR -name "*.log" -type f -mtime +7 >> $REPORT_FILE
 ```
 
-#4. Order to delete the actual file (this step requires you to be sure before entering -delete) 
+### 4. Order to delete the actual file (this step requires you to be sure before entering -delete) 
 ```
 find $TARGET_DIR -name "*.log" -type f -mtime +7 -delete
 ```
