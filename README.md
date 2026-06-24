@@ -92,4 +92,10 @@ Add this into the crontab -e file
 * **`0 0 * * *`**: Schedules the task to run automatically **every day at midnight (00:00)**.
 * **`/path/to/security_audit.sh`**: Specifies the absolute path to the script that will be executed.
 
+## 🔍 Verification
 
+1. **Check the Queue**: After setup, run `crontab -l` to verify that your script has been successfully registered in the system's schedule.
+2. **Await Automation**: Wait for the scheduled execution time (e.g., midnight) to trigger.
+3. **Verify the Output**: Check your `audit_report.txt` file. You should see new log entries appended automatically without any manual intervention.
+
+![Output Script](./outputcode3.png)
